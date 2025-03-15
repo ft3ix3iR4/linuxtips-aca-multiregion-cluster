@@ -1,5 +1,5 @@
 module "cluster" {
-  source = "github.com/ft3ix3iR4/linuxtips-aca-modules.git//cluster"
+  source = "https://github.com/ft3ix3iR4/linuxtips-aca-modules//cluster?ref=v1.1.0"
 
   project_name = var.project_name
   region       = var.region
