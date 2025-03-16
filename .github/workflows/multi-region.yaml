@@ -307,16 +307,16 @@ jobs:
               working-directory: ./deployment/environment
               
             - name: Terraform Init
-              run: terraform init -backend-config=sa-east-1/backend.tfvars
-              working-directory: ./deployment/environment
+              run: terraform init -backend-config=./environment/sa-east-1/backend.tfvars
+              working-directory: ./deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
                 AWS_REGION: "sa-east-1"
 
             - name: Terraform Plan
-              run: terraform plan -var-file=sa-east-1/terraform.tfvars
-              working-directory: ./deployment/environment
+              run: terraform plan -var-file=./environment/sa-east-1/terraform.tfvars
+              working-directory: ./deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
@@ -340,16 +340,16 @@ jobs:
               working-directory: ./deployment/environment
               
             - name: Terraform Init
-              run: terraform init -backend-config=sa-east-1/backend.tfvars
-              working-directory: ./deployment/environment
+              run: terraform init -backend-config=./environment/sa-east-1/backend.tfvars
+              working-directory: ./deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
                 AWS_REGION: "sa-east-1"
 
             - name: Terraform Apply
-              run: terraform apply --auto-approve -var-file=sa-east-1/terraform.tfvars
-              working-directory: ./deployment/environment
+              run: terraform apply --auto-approve -var-file=./environment/sa-east-1/terraform.tfvars
+              working-directory: ./deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
