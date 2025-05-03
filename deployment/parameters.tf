@@ -22,6 +22,7 @@ resource "aws_ssm_parameter" "lb_internal_listener_arn" {
   value = module.cluster.lb_internal_listener
 }
 
+
 resource "aws_ssm_parameter" "service_discovery_cloudmap_name" {
   type  = "String"
   name  = format("/%s/service-discovery/cloudmap/name", var.project_name)
